@@ -53,8 +53,8 @@ function handleSlider() {
 }
 
 function handleChange(event) {
-  lengthOfPw = event.target.value;
-  if (isNaN(lengthOfPw)) {
-      lengthOfPw = 10
-  }
+    lengthOfPw = event.target.value;
+    if (isNaN(lengthOfPw)) {
+        lengthOfPw = 10
+    }
 }
