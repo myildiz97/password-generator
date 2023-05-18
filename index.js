@@ -23,23 +23,29 @@ function generatePw(arr) {
     return password.join("")
 }
 
+let flag = true
+
 function handleClick() {
-    const checkbox = document.getElementById("slider-btn");
-    const newArr = [...characters]
-    let pw
-    if (checkbox.checked) {
-        pw = newArr
+    if (flag) {
+        const checkbox = document.getElementById("slider-btn");
+        const newArr = [...characters]
+        let pw
+        if (checkbox.checked) {
+            pw = newArr
+        } else {
+            const index = newArr.indexOf("9");
+            pw = newArr.slice(0, index+1)
+        }
+        
+        const passwords = []
+        for (let i = 0; i < 2; i++) {
+            passwords.push(generatePw(pw))
+        }
+        pw1El.textContent = passwords[0]
+        pw2El.textContent = passwords[1]
     } else {
-        const index = newArr.indexOf("9");
-        pw = newArr.slice(0, index+1)
+        alert("Input does not obey the rules. Enter a number between 3 and 20 !")
     }
-    
-    const passwords = []
-    for (let i = 0; i < 2; i++) {
-        passwords.push(generatePw(pw))
-    }
-    pw1El.textContent = passwords[0]
-    pw2El.textContent = passwords[1]
 }
 
 function handleSlider() {
@@ -54,7 +60,9 @@ function handleSlider() {
 
 function handleChange(event) {
     lengthOfPw = event.target.value;
-    if (isNaN(lengthOfPw)) {
-        lengthOfPw = 10
+    if (lengthOfPw > 20 || lengthOfPw < 3 ||isNaN(lengthOfPw)) {
+        flag = false
+    } else {
+        flag = true
     }
 }
