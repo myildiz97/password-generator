@@ -51,10 +51,10 @@ function handleClick() {
 function handleSlider() {
     if (slider.textContent == "Special Chars: OFF") {
         slider.textContent = "Special Chars: ON"
-        slider.style.color = "#004b23"
+        slider.style.backgroundColor = "green"
     } else {
         slider.textContent = "Special Chars: OFF"
-        slider.style.color = "#d90429"
+        slider.style.backgroundColor = "#d90429"
     }
 }
 
