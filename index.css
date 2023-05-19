@@ -12,6 +12,14 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #green {
@@ -23,11 +31,13 @@ body {
     width: 170px;
     border: none;
     border-radius: 5px;
-    background: #4ADF86;
+    background: green;
     color: #ffffff;
     font-weight: bold;
+    font-size: 18px;
     margin: 10px auto 10px 0;
     cursor: pointer;
+    font-family: 'Lato', sans-serif;
 }
 
 hr {
@@ -36,6 +46,11 @@ hr {
     background: #dad7cd;
     border-radius: 3px;
     margin: 20px auto;
+}
+
+ul {
+  margin-top: 0;
+  margin-bottom: 25px;
 }
 
 ul > li {
@@ -50,14 +65,18 @@ ul > li {
 }
 
 .password {
-   width: 180px;
-   height: 30px;
+   width: 300px;
+   min-height: 30px;
+   height: fit-content;
    display: flex;
    justify-content: center;
    align-items: center; 
    color: #4ADF86;
    background-color: #273549;
    border-radius: 5px;
+   font-size: 20px;
+   font-family: 'Lato', sans-serif;
+   margin: auto 10px;
 }
 
 .btns {
@@ -82,10 +101,11 @@ ul > li {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background-color: #f18701;
-    color: #d90429;
+    background-color: #d90429;
+    color: #ffffff;
     font-weight: bold;
     padding-left: 10px;
+    font-size: 18px;
 }
 
 .pw-info {
@@ -95,11 +115,11 @@ ul > li {
 }
 
 #text {
-    width: 160px;
+    width: 80px;
     height: 25px;
     margin-left: 10px;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
     text-align: center;
     font-family: 'Lato', sans-serif;
 }
@@ -145,4 +165,30 @@ input[type="checkbox"]:checked + .slider {
 
 input[type="checkbox"]:checked + .slider:before {
   transform: translateX(26px);
+}
+
+@media all and (max-width: 720px) {
+  .container {
+    margin-top: 300px;
+  }
+
+  hr {
+    width: 400px;
+  }
+
+  .passwords {
+    margin-bottom: 20px;
+    flex-direction: column;
+  }
+
+  .password {
+    min-height: 60px;
+    margin: 10px auto;
+  }
+}
+
+@media all and (max-height: 480px) {
+  .container {
+    margin-top: 500px;
+  }
 }
