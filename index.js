@@ -62,6 +62,8 @@ function handleChange(event) {
     lengthOfPw = event.target.value;
     if (lengthOfPw > 20 || lengthOfPw < 3 ||isNaN(lengthOfPw)) {
         flag = false
+        const text = document.getElementById("text")
+        text.value = ""
     } else {
         flag = true
     }
